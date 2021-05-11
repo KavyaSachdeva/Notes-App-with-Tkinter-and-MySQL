@@ -32,16 +32,16 @@ scroll_bar.config(command=r.yview)
 
 ##################################### CONNECTION ######################################################
 
-con = mysql.connector.connect(host='localhost',
-                              user='root',
-                              password='admin',
-                              database='mynotes',
-                              port=3307)
+con = mysql.connector.connect(host='xxxxxx',
+                              user='xxxx',
+                              password='xxxxx',
+                              database='xxxxx',
+                              port=xxxx)
 
 c = con.cursor()
 #####################################MAKE TABLE#######################################################
-#c.execute('CREATE DATABASE MYNOTES')
-c.execute('CREATE TABLE IF NOT EXISTS Noteskavya (note_id int AUTO_INCREMENT PRIMARY KEY , title varchar(20),content varchar(100), date_published date);')
+c.execute('CREATE DATABASE database_name')
+c.execute('CREATE TABLE IF NOT EXISTS table_name (note_id int AUTO_INCREMENT PRIMARY KEY , title varchar(20),content varchar(100), date_published date);')
 
 titles = []
 
@@ -168,12 +168,9 @@ button3.place(x=600, y=150)
 r.bind("<Button-1>", fileSelection)
 
 
-print(con)
+
 
 
 root.mainloop()
 
 
-# UPDATE STATEMENT USING NOTEID OR TITLE
-# CONNECTION AT THE TOP
-# DELETE BUTTON--> LISTBOX SHOWING ACTIVE NOTES
